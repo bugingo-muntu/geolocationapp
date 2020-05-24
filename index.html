@@ -51,7 +51,7 @@
     <script type="text/javascript">
      document.addEventListener('deviceready',onDeviceReady,false); 
      function onDeviceReady(){
-     	var watchID=navigator.geolocation.getCurrentPosition(onSuccess,onError,{timeout:3000,enableHighAccuracy:true});
+     	var watchID=navigator.geolocation.watchPosition(onSuccess,onError,{timeout:3000,enableHighAccuracy:true});
      	console.log("navigator.geolocation works well as you can see");
      }
      
@@ -76,7 +76,7 @@
               'message: ' + error.message + '\n');
     }
 
-    	 //navigator.geolocation.clearWatch(watchID);
+    	 navigator.geolocation.clearWatch(watchID);
     </script>
 </body>
 
